@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapid Fix Plumbing & Electrical | 24/7 Emergency Callouts</title>
+<meta name="description" content="Design demo by LeadForge Digital: a bold, trust-focused landing page style for local trade and home service businesses.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-900:#0b2545; --blue-800:#12345f; --blue-700:#1a4a86;
+    --orange:#f97316; --orange-dark:#ea580c;
+    --ink:#0f172a; --muted:#5b6b82; --line:#e4e9f0; --bg-alt:#f4f7fb;
+    --radius:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink);line-height:1.55;background:#fff;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1160px;margin:0 auto;padding:0 24px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:8px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .btn-call{background:var(--orange);color:#fff;box-shadow:0 8px 20px rgba(249,115,22,.35);}
+  .btn-call:hover{background:var(--orange-dark);transform:translateY(-2px);}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:2px solid rgba(255,255,255,.5);}
+  .btn-ghost:hover{background:rgba(255,255,255,.18);}
+  .btn-dark{background:var(--blue-900);color:#fff;}
+  .btn-dark:hover{background:var(--blue-800);transform:translateY(-2px);}
+
+  /* Demo badge */
+  .demo-badge{background:var(--blue-900);color:#cfe0ff;text-align:center;font-size:.85rem;padding:9px 16px;}
+  .demo-badge a{color:#fff;font-weight:700;text-decoration:underline;}
+
+  /* Top bar */
+  .topbar{background:var(--blue-900);color:#cfe0ff;font-size:.85rem;padding:8px 0;}
+  .topbar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .topbar strong{color:#fff;}
+
+  /* Nav */
+  header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;color:var(--blue-900);}
+  .brand .mark{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;}
+  .nav-links{display:flex;gap:28px;align-items:center;font-weight:600;color:var(--blue-900);}
+  .nav-links a:hover{color:var(--orange);}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--blue-900),var(--blue-700) 70%);color:#fff;padding:72px 0 84px;position:relative;overflow:hidden;}
+  .hero:before{content:'';position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.35),transparent 70%);}
+  .hero .container{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:1;}
+  .badge-pill{display:inline-block;background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.5);color:#ffd9b3;font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:999px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.1rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;margin-bottom:18px;}
+  .hero h1 span{color:var(--orange);}
+  .hero p.lead{font-size:1.15rem;color:#d7e3f5;margin-bottom:28px;max-width:520px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+  .trust-row{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap;color:#bcd0ec;font-size:.85rem;font-weight:600;}
+  .trust-row span{display:flex;align-items:center;gap:6px;}
+  .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:28px;backdrop-filter:blur(6px);}
+  .hero-card h3{font-size:1.1rem;margin-bottom:14px;color:#fff;}
+  .hero-stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .hero-stat:last-child{border-bottom:none;}
+  .hero-stat b{font-size:1.6rem;color:var(--orange);}
+  .hero-stat span{color:#c7d7ee;font-size:.85rem;}
+
+  /* Services */
+  section{padding:76px 0;}
+  .section-tag{color:var(--orange-dark);font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:.06em;margin-bottom:10px;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.6rem,3.5vw,2.3rem);font-weight:800;color:var(--blue-900);}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;}
+  .svc-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+  .svc-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(11,37,69,.1);border-color:transparent;}
+  .svc-icon{width:52px;height:52px;border-radius:10px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:16px;}
+  .svc-card h3{font-size:1.15rem;font-weight:700;color:var(--blue-900);margin-bottom:8px;}
+  .svc-card p{color:var(--muted);font-size:.95rem;}
+
+  /* Why us */
+  .why{background:var(--bg-alt);}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px;}
+  .why-item{background:#fff;border-radius:var(--radius);padding:24px;text-align:center;box-shadow:0 2px 10px rgba(11,37,69,.06);}
+  .why-item .num{font-size:2rem;font-weight:800;color:var(--orange);margin-bottom:6px;}
+  .why-item h4{color:var(--blue-900);font-weight:700;margin-bottom:6px;}
+  .why-item p{color:var(--muted);font-size:.9rem;}
+
+  /* Testimonial */
+  .proof{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+  .stars{color:var(--orange);font-size:1.2rem;margin-bottom:14px;}
+  .quote{font-size:1.3rem;font-weight:600;color:var(--blue-900);line-height:1.5;margin-bottom:16px;}
+  .cite{color:var(--muted);font-size:.9rem;}
+  .review-card{background:var(--blue-900);color:#fff;border-radius:16px;padding:32px;}
+  .review-list li{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.95rem;}
+  .review-list li:last-child{border:none;}
+  .review-list b{color:var(--orange);}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;text-align:center;}
+  .cta-band h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;margin-bottom:10px;}
+  .cta-band p{color:rgba(255,255,255,.92);margin-bottom:26px;}
+  .cta-band .btn-dark{background:var(--blue-900);}
+  .cta-band .btn-dark:hover{background:var(--blue-800);}
+
+  footer{background:var(--blue-900);color:#aebfda;padding:44px 0 24px;font-size:.9rem;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;margin-bottom:28px;}
+  footer h4{color:#fff;margin-bottom:12px;font-size:1rem;}
+  footer li{margin-bottom:8px;}
+  footer a:hover{color:#fff;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center;font-size:.82rem;}
+
+  @media (max-width:860px){
+    .hero .container{grid-template-columns:1fr;}
+    .proof{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="demo-badge">Design demo by LeadForge Digital. Style: bold &amp; trust-focused, for local trade &amp; home service businesses · <a href="portfolio.html">Back to portfolio</a></div>
+
+  <div class="topbar">
+    <div class="container">
+      <span><strong>24/7 Emergency Line:</strong> 011 555 0182</span>
+      <span>Serving Johannesburg &amp; surrounds</span>
+    </div>
+  </div>
+
+  <header class="site">
+    <div class="container nav-wrap">
+      <div class="brand"><span class="mark">RF</span> Rapid Fix</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="tel:+27115550182" class="btn btn-call">📞 Call Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="badge-pill">24/7 Emergency Callouts</span>
+        <h1>Burst pipe? Tripped board? <span>We're there in 60 minutes.</span></h1>
+        <p class="lead">Licensed plumbers and electricians on call around the clock. Upfront pricing, no surprise fees, and a job that's actually done right the first time.</p>
+        <div class="hero-ctas">
+          <a href="tel:+27115550182" class="btn btn-call">📞 Call 011 555 0182</a>
+          <a href="#quote" class="btn btn-ghost">Get a Free Quote</a>
+        </div>
+        <div class="trust-row">
+          <span>✅ Licensed &amp; Insured</span>
+          <span>⭐ 4.9/5 (612 reviews)</span>
+          <span>🛠️ 15 yrs in business</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Right now, we can help with:</h3>
+        <div class="hero-stat"><span>Emergency plumbing</span><b>60min</b></div>
+        <div class="hero-stat"><span>Electrical faults</span><b>Same-day</b></div>
+        <div class="hero-stat"><span>Geyser replacement</span><b>24hr</b></div>
+        <div class="hero-stat"><span>Free callout quote</span><b>R0</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">What We Fix</div>
+        <h2>Full-service plumbing &amp; electrical, one call away</h2>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card"><div class="svc-icon">🚰</div><h3>Emergency Plumbing</h3><p>Burst pipes, blocked drains, leak detection: dispatched within the hour, day or night.</p></div>
+        <div class="svc-card"><div class="svc-icon">⚡</div><h3>Electrical Repairs</h3><p>Tripped boards, faulty wiring, and certified compliance work from qualified electricians.</p></div>
+        <div class="svc-card"><div class="svc-icon">🔥</div><h3>Geyser Installs</h3><p>Same-day geyser replacement and repair, including insurance claim paperwork.</p></div>
+        <div class="svc-card"><div class="svc-icon">🚿</div><h3>Bathroom Fit-Outs</h3><p>Full renovations or single-fixture swaps, quoted upfront with no hidden costs.</p></div>
+        <div class="svc-card"><div class="svc-icon">🏠</div><h3>Home Rewiring</h3><p>Full or partial rewires for older homes, done to current safety code.</p></div>
+        <div class="svc-card"><div class="svc-icon">🧰</div><h3>Maintenance Plans</h3><p>Scheduled checks that catch problems before they become emergencies.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="why">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Why Homeowners Choose Us</div>
+        <h2>No callout fees. No jargon. No mess left behind.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="num">60min</div><h4>Average response</h4><p>Across our emergency service area.</p></div>
+        <div class="why-item"><div class="num">100%</div><h4>Upfront pricing</h4><p>You approve the quote before we start.</p></div>
+        <div class="why-item"><div class="num">12mo</div><h4>Workmanship guarantee</h4><p>Every job backed in writing.</p></div>
+        <div class="why-item"><div class="num">4.9★</div><h4>Average rating</h4><p>From 600+ verified customers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container proof">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Called at 11pm with a burst geyser, someone was at my door by midnight. Fixed, cleaned up, and cheaper than I expected."</p>
+        <div class="cite">Naledi M., Sandton</div>
+      </div>
+      <div class="review-card">
+        <ul class="review-list">
+          <li><span>Response time</span><b>4.9/5</b></li>
+          <li><span>Value for money</span><b>4.8/5</b></li>
+          <li><span>Would recommend</span><b>98%</b></li>
+          <li><span>Jobs completed</span><b>3,400+</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="quote">
+    <div class="container">
+      <h2>Something's leaking, sparking, or broken?</h2>
+      <p>Get a free, no-obligation quote in minutes, or call now for emergency dispatch.</p>
+      <div class="hero-ctas" style="justify-content:center;">
+        <a href="tel:+27115550182" class="btn btn-dark">📞 Call 011 555 0182</a>
+        <a href="#" class="btn btn-ghost" style="border-color:#fff;">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <h4>Rapid Fix Plumbing &amp; Electrical</h4>
+          <p>Licensed, insured, and on call 24/7 across Johannesburg and surrounds.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul><li><a href="#services">Plumbing</a></li><li><a href="#services">Electrical</a></li><li><a href="#services">Geysers</a></li></ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul><li><a href="tel:+27115550182">011 555 0182</a></li><li><a href="#">Get a quote</a></li></ul>
+        </div>
+      </div>
+      <div class="foot-bottom">This is a fictional design demo by LeadForge Digital, not a live business. <a href="portfolio.html" style="color:#fff;">← Back to portfolio</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

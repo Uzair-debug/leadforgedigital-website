@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA | Performance Activewear</title>
+<meta name="description" content="Design demo by LeadForge Digital: a bold dark-mode landing page style for e-commerce and personal/DTC brands.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f; --bg-alt:#121218; --card:#17171f;
+    --violet:#a855f7; --pink:#ec4899; --cyan:#22d3ee;
+    --text:#f4f4f8; --muted:#8b8b9a; --line:#26262f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);line-height:1.55;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .grad-text{background:linear-gradient(90deg,var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:999px;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease;}
+  .btn-grad{background:linear-gradient(90deg,var(--violet),var(--pink));color:#fff;box-shadow:0 10px 30px rgba(168,85,247,.35);}
+  .btn-grad:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(168,85,247,.5);}
+  .btn-outline{background:transparent;border:1px solid var(--line);color:var(--text);}
+  .btn-outline:hover{border-color:var(--violet);}
+
+  .demo-badge{background:var(--bg-alt);color:#c9c9d6;text-align:center;font-size:.82rem;padding:10px 16px;border-bottom:1px solid var(--line);}
+  .demo-badge a{color:var(--pink);font-weight:600;}
+
+  header.site{padding:22px 0;position:sticky;top:0;background:rgba(10,10,15,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50;}
+  .nav-wrap{display:flex;justify-content:space-between;align-items:center;}
+  .brand{font-weight:700;font-size:1.5rem;letter-spacing:-.02em;}
+  .nav-links{display:flex;gap:32px;font-size:.9rem;color:var(--muted);font-weight:500;}
+  .nav-links a:hover{color:var(--text);}
+
+  .hero{padding:110px 0 90px;position:relative;overflow:hidden;text-align:center;}
+  .hero:before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(168,85,247,.25),transparent 65%);pointer-events:none;}
+  .hero .container{position:relative;z-index:1;}
+  .eyebrow-pill{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);padding:8px 18px;border-radius:999px;font-size:.82rem;color:var(--muted);margin-bottom:28px;}
+  .eyebrow-pill span{width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block;}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:24px;}
+  .hero p{font-size:1.2rem;color:var(--muted);max-width:560px;margin:0 auto 38px;}
+  .hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;}
+  .stat-strip{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;padding-top:40px;border-top:1px solid var(--line);}
+  .stat-strip div b{font-size:2rem;font-weight:700;display:block;}
+  .stat-strip div span{color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;}
+
+  section{padding:90px 0;}
+  .section-head{text-align:center;max-width:600px;margin:0 auto 56px;}
+  .section-tag{color:var(--cyan);font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;}
+
+  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .product-card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .25s ease,border-color .25s ease;}
+  .product-card:hover{transform:translateY(-8px);border-color:var(--violet);}
+  .product-img{height:260px;position:relative;}
+  .product-img.p1{background:linear-gradient(160deg,var(--violet),#4c1d95);}
+  .product-img.p2{background:linear-gradient(160deg,var(--pink),#831843);}
+  .product-img.p3{background:linear-gradient(160deg,var(--cyan),#0e7490);}
+  .product-tag{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.4);backdrop-filter:blur(4px);padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;}
+  .product-body{padding:22px;}
+  .product-body h3{font-size:1.15rem;font-weight:600;margin-bottom:6px;}
+  .product-body p{color:var(--muted);font-size:.88rem;margin-bottom:14px;}
+  .price-row{display:flex;justify-content:space-between;align-items:center;}
+  .price-row b{font-size:1.2rem;}
+  .price-row a{color:var(--violet);font-weight:600;font-size:.9rem;}
+
+  .features{background:var(--bg-alt);}
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .feat-card{text-align:center;padding:10px;}
+  .feat-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--violet),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 18px;}
+  .feat-card h4{font-weight:600;margin-bottom:8px;}
+  .feat-card p{color:var(--muted);font-size:.88rem;}
+
+  .social{text-align:center;}
+  .social-quote{font-size:1.6rem;font-weight:600;max-width:760px;margin:0 auto 24px;line-height:1.4;letter-spacing:-.01em;}
+  .social-people{display:flex;justify-content:center;gap:10px;margin-top:24px;}
+  .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));border:2px solid var(--bg);}
+
+  .cta-final{text-align:center;background:linear-gradient(135deg,rgba(168,85,247,.15),rgba(236,72,153,.15));border-radius:28px;margin:0 24px;padding:80px 24px;}
+  .cta-final h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:700;letter-spacing:-.02em;margin-bottom:16px;}
+  .cta-final p{color:var(--muted);margin-bottom:34px;}
+
+  footer{padding:56px 0 28px;border-top:1px solid var(--line);margin-top:40px;font-size:.88rem;color:var(--muted);}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:32px;}
+  footer h4{color:var(--text);margin-bottom:14px;font-size:.95rem;}
+  footer li{margin-bottom:8px;}
+  footer a:hover{color:var(--text);}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:18px;text-align:center;font-size:.8rem;}
+
+  @media (max-width:900px){
+    .product-grid{grid-template-columns:1fr;}
+    .feat-grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .stat-strip{gap:32px;}
+    .cta-final{margin:0;border-radius:0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="demo-badge">Design demo by LeadForge Digital. Style: bold dark-mode, for e-commerce &amp; personal/DTC brands · <a href="portfolio.html">Back to portfolio</a></div>
+
+  <header class="site">
+    <div class="container nav-wrap">
+      <div class="brand">NOVA</div>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#features">Why NOVA</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="#shop" class="btn btn-grad">Shop Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow-pill"><span></span> New drop live now</div>
+      <h1>Built to move.<br><span class="grad-text">Made to last.</span></h1>
+      <p>Performance activewear engineered for the gym, the run, and everything after. Sweat-tested, not just style-tested.</p>
+      <div class="hero-ctas">
+        <a href="#shop" class="btn btn-grad">Shop the Drop</a>
+        <a href="#features" class="btn btn-outline">See What's Different</a>
+      </div>
+      <div class="stat-strip">
+        <div><b>50K+</b><span>Customers</span></div>
+        <div><b>4.8/5</b><span>Avg Rating</span></div>
+        <div><b>30-Day</b><span>Free Returns</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">This Week's Drop</div>
+        <h2>Three ways to train</h2>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img p1"><span class="product-tag">Bestseller</span></div>
+          <div class="product-body">
+            <h3>Flux Training Tee</h3>
+            <p>4-way stretch, sweat-wicking, seamless underarm panels.</p>
+            <div class="price-row"><b>R649</b><a href="#">Add to Cart →</a></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img p2"><span class="product-tag">New</span></div>
+          <div class="product-body">
+            <h3>Pulse Leggings</h3>
+            <p>Squat-proof compression fabric with side pocket storage.</p>
+            <div class="price-row"><b>R899</b><a href="#">Add to Cart →</a></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img p3"><span class="product-tag">Limited</span></div>
+          <div class="product-body">
+            <h3>Momentum Jacket</h3>
+            <p>Windproof shell layer, packable, reflective trim for night runs.</p>
+            <div class="price-row"><b>R1,349</b><a href="#">Add to Cart →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Why NOVA</div>
+        <h2>Not just another activewear label</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card"><div class="feat-icon">⚡</div><h4>Sweat-Tested</h4><p>Every piece trial-run by 200+ athletes before it ships.</p></div>
+        <div class="feat-card"><div class="feat-icon">♻️</div><h4>Recycled Fabric</h4><p>73% recycled performance fibers across the range.</p></div>
+        <div class="feat-card"><div class="feat-icon">📦</div><h4>Free Returns</h4><p>30 days, no questions, prepaid return label included.</p></div>
+        <div class="feat-card"><div class="feat-icon">🔒</div><h4>Size-Lock Fit</h4><p>Engineered to hold shape after 100+ washes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social" id="reviews">
+    <div class="container">
+      <p class="social-quote">"I've bought from every big activewear brand out there. NOVA is the first one that hasn't stretched out after a month of daily training."</p>
+      <div style="color:var(--muted);font-size:.9rem;">Thabo K., verified buyer</div>
+      <div class="social-people">
+        <div class="avatar"></div><div class="avatar"></div><div class="avatar"></div><div class="avatar"></div><div class="avatar"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-final">
+        <h2>Ready to train different?</h2>
+        <p>Free shipping on your first order. Free returns, always.</p>
+        <a href="#shop" class="btn btn-grad">Shop the Full Range</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <h4>NOVA</h4>
+          <p>Performance activewear designed, tested, and shipped from Cape Town.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul><li><a href="#shop">New Arrivals</a></li><li><a href="#shop">Best Sellers</a></li></ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul>
+        </div>
+      </div>
+      <div class="foot-bottom">This is a fictional design demo by LeadForge Digital, not a live business. <a href="portfolio.html" style="color:var(--text);">← Back to portfolio</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>

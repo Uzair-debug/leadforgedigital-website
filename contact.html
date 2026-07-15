@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact LeadForge Digital - Get started with a conversion-focused website for your business. POPIA-compliant lead forms.">
+    <title>Contact - LeadForge Digital</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">LeadForge Digital</a>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html" class="nav-cta active">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get Started</h1>
+            <p>Let's discuss how we can build a conversion-focused website that generates leads for your business.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <!-- Step 1: Basic Information -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="error-message" id="nameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="emailError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-message" id="phoneError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="business">Business Name</label>
+                                <input type="text" id="business" name="business">
+                            </div>
+
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step</button>
+                        </div>
+
+                        <!-- Step 2: Service Details -->
+                        <div class="form-step" id="step2">
+                            <div class="form-group">
+                                <label for="service">What service are you interested in? *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="starter">Starter Landing Page</option>
+                                    <option value="business-website">Business Website</option>
+                                    <option value="complete-website">Complete Website</option>
+                                    <option value="website-care">Website Care & Hosting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="serviceError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="industry">Industry *</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select your industry...</option>
+                                    <option value="service-business">Service Business</option>
+                                    <option value="financial-services">Financial Services</option>
+                                    <option value="debt-review">Debt Review</option>
+                                    <option value="call-centre">Call Centre</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message" id="industryError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="timeline">When do you need this completed?</label>
+                                <select id="timeline" name="timeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="asap">As soon as possible</option>
+                                    <option value="1-month">Within 1 month</option>
+                                    <option value="2-3-months">2-3 months</option>
+                                    <option value="3-plus-months">3+ months</option>
+                                    <option value="just-browsing">Just browsing</option>
+                                </select>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-secondary" onclick="prevStep()">Previous</button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Message & Consent -->
+                        <div class="form-step" id="step3">
+                            <div class="form-group">
+                                <label for="message">Tell us about your project *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <span class="error-message" id="messageError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget">Budget Range (Optional)</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range...</option>
+                                    <option value="under-10k">Under R10,000</option>
+                                    <option value="10k-25k">R10,000 - R25,000</option>
+                                    <option value="25k-50k">R25,000 - R50,000</option>
+                                    <option value="50k-plus">R50,000+</option>
+                                </select>
+                            </div>
+
+                            <!-- POPIA Compliance Checkbox -->
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="popia-consent" name="popia-consent" required>
+                                <label for="popia-consent">
+                                    I consent to LeadForge Digital processing my personal information in accordance with the <a href="privacy-policy.html" target="_blank">Privacy Policy</a> and POPIA regulations. *
+                                </label>
+                                <span class="error-message" id="popiaError"></span>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                                <label for="marketing-consent">
+                                    I would like to receive marketing communications about services and updates (optional).
+                                </label>
+                            </div>
+
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-secondary" onclick="prevStep()">Previous</button>
+                                <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+                            </div>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div class="form-success" id="formSuccess" style="display: none;">
+                            <h3>Thank You!</h3>
+                            <p>Your enquiry has been submitted successfully. We'll get back to you within 24 hours.</p>
+                            <a href="index.html" class="btn btn-primary">Return to Home</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Other Ways to Reach Us</h2>
+                    
+                    <div class="contact-method">
+                        <h3>💬 WhatsApp</h3>
+                        <p>Chat with us directly on WhatsApp</p>
+                        <a href="https://wa.me/27694942934" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                            Open WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>📞 Phone</h3>
+                        <p>Call us during business hours</p>
+                        <p><a href="tel:+27694942934">069 494 2934</a></p>
+                        <a href="tel:+27694942934" class="btn btn-secondary">Call Now</a>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>✉️ Email</h3>
+                        <p>Send us an email</p>
+                        <p><a href="mailto:leadforgedigital2026@gmail.com">leadforgedigital2026@gmail.com</a></p>
+                        <a href="mailto:leadforgedigital2026@gmail.com" class="btn btn-secondary">Send Email</a>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Business Hours</h3>
+                        <p>
+                            Monday - Friday: 8:00 AM - 5:00 PM<br>
+                            Saturday - Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LeadForge Digital</h3>
+                    <p>Conversion-focused websites for service businesses, financial services, and call centres.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Starter Landing Page</a></li>
+                        <li><a href="services.html">Business Website</a></li>
+                        <li><a href="financial-services.html">Complete Website</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+27694942934">069 494 2934</a></li>
+                        <li><a href="mailto:leadforgedigital2026@gmail.com">leadforgedigital2026@gmail.com</a></li>
+                        <li><a href="https://wa.me/27694942934" target="_blank" rel="noopener">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LeadForge Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

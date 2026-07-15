@@ -1,0 +1,8 @@
+# Robots.txt for LeadForge Digital
+# Allows all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://leadforgedigital.netlify.app/sitemap.xml
